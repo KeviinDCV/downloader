@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoDownloader - Descarga videos de YouTube y redes sociales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-download"></i>
+                <h1>VideoDownloader</h1>
+            </div>
+            <p class="tagline">Descarga videos de YouTube, Instagram, Facebook, Twitter y más</p>
+        </header>
+
+        <main>
+            <div class="download-card">
+                <div class="input-group">
+                    <input type="text" id="video-url" placeholder="Pega la URL del video aquí...">
+                    <select id="format-selector">
+                        <option value="mp4">MP4 (Video)</option>
+                        <option value="mp3">MP3 (Audio)</option>
+                    </select>
+                    <button id="download-btn">Descargar</button>
+                </div>
+                <div class="supported-platforms">
+                    <span><i class="fab fa-youtube"></i> YouTube</span>
+                    <span><i class="fab fa-instagram"></i> Instagram</span>
+                    <span><i class="fab fa-facebook"></i> Facebook</span>
+                    <span><i class="fab fa-twitter"></i> Twitter</span>
+                    <span><i class="fab fa-tiktok"></i> TikTok</span>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="loader"></div>
+                <p>Procesando tu descarga...</p>
+            </div>
+
+            <div id="result" class="hidden">
+                <div class="result-card">
+                    <div class="video-info">
+                        <div class="thumbnail-container">
+                            <img id="video-thumbnail" src="" alt="Miniatura del video">
+                            <div class="platform-badge" id="platform-badge">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>
+                        <div class="video-details">
+                            <h3 id="video-title">Título del video</h3>
+                            <p id="download-message">¡Descarga completada!</p>
+                            <button id="download-file-btn" class="download-file-btn">
+                                <i class="fas fa-download"></i> Descargar archivo
+                            </button>
+                            <button id="new-download-btn" class="new-download-btn">
+                                <i class="fas fa-plus"></i> Nueva descarga
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="error-message" class="hidden">
+                <div class="error-card">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p id="error-text">Ha ocurrido un error</p>
+                    <button id="try-again-btn">Intentar de nuevo</button>
+                </div>
+            </div>
+        </main>
+
+        <section class="how-to-use">
+            <h2>Cómo usar VideoDownloader</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Paso 1</h3>
+                    <p>Copia la URL del video que deseas descargar</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-paste"></i>
+                    </div>
+                    <h3>Paso 2</h3>
+                    <p>Pega la URL en el campo de texto</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Paso 3</h3>
+                    <p>Haz clic en descargar y ¡listo!</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 VideoDownloader - Descarga videos de forma fácil y rápida</p>
+            <div class="footer-links">
+                <a href="#">Términos de servicio</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Contacto</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
